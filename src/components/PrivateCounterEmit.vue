@@ -1,0 +1,40 @@
+<template>
+  <div class="private-counter">
+    add to PRIVATE counter
+    <button @click='increment()'>+</button>
+    <br />
+
+    <br />
+    remove from PRIVATE counter
+    <button @click='decrement()'>-</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'PrivateCounterEmit',
+  data() {
+    return {};
+  },
+  methods: {
+    increment() {
+      this.$emit('incrementPrivate');
+    },
+
+    decrement() {
+      this.$emit('decrementPrivate');
+    },
+  },
+};
+</script>
+
+
+<style scoped lang="scss">
+.private-counter {
+  display: flex;
+  flex-direction: column;
+  button {
+    width: 30%;
+  }
+}
+</style>
