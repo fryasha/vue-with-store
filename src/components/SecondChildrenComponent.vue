@@ -20,8 +20,8 @@
     <div class="wrap"> second component PRIVATE counter is {{privateCounter}}</div>
     <PrivateCounterEmit
       :counter='privateCounter'
-      @incrementPrivate='incrementPrivateMethod'
-      @decrementPrivate='decrementPrivateMethod'
+      @incrementPrivate='incrementPrivateMethod($event)'
+      @decrementPrivate='decrementPrivateMethod($event)'
     />
   </div>
 </template>
@@ -41,10 +41,12 @@ export default {
     };
   },
   methods: {
-    incrementPrivateMethod() {
+    incrementPrivateMethod(ev) {
+      console.log(ev);
       this.privateCounter += 1;
     },
-    decrementPrivateMethod() {
+    decrementPrivateMethod(ev) {
+      console.log(ev);
       this.privateCounter -= 1;
     },
   },

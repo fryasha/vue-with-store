@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <div class="high-order">
+    <div class="high-order" v-if="test">
       <ChildrenComponent :msg="msg"/>
       <SecondChildrenComponent :msg="msgForSecond"/>
     </div>
 
-    <div class="store-commiters">
+    <div class="store-commiters" v-if="test">
       add to STORE counter
       <button @click='addToCounter()'>+</button>
       <br />
@@ -14,12 +14,16 @@
       remove from STORE counter
       <button @click='removeFromCounter()'>-</button>
     </div>
+
+    <div class="test" v-for="(item, ind) in elements" :key='ind' v-multi-ref='item'>{{item}}</div>
   </div>
 </template>
 
 <script>
 import ChildrenComponent from './components/ChildrenComponent.vue';
 import SecondChildrenComponent from './components/SecondChildrenComponent.vue';
+
+import './font.scss';
 
 export default {
   name: 'app',
@@ -29,8 +33,15 @@ export default {
   },
   data() {
     return {
+      test: false,
       msg: 'first Component',
       msgForSecond: 'second Component',
+      elements: [
+        'foo',
+        'foo',
+        'bar',
+        'baz',
+      ],
     };
   },
   methods: {
@@ -40,6 +51,9 @@ export default {
     removeFromCounter() {
       this.$store.commit('DECREMENT', 1);
     },
+  },
+  mounted() {
+    console.log(this.$refs.foo);
   },
 };
 </script>

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'EuclidFlex';
+  src: url('~@/assets/fonts/EuclidFlex/EuclidFlex-Medium-WebM.eot') format('embedded-opentype'),
+    url('~@/assets/fonts/EuclidFlex/EuclidFlex-Medium-WebM.woff') format('woff'),
+    url('~@/assets/fonts/EuclidFlex/EuclidFlex-Medium-WebM.ttf') format('truetype'),
+    url('~@/assets/fonts/EuclidFlex/EuclidFlex-Medium-WebM.svg') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: 'EuclidFlex';
+}

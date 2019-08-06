@@ -1,12 +1,11 @@
 <template>
   <div class="private-counter">
     add to PRIVATE counter
-    <button @click='increment()'>+</button>
+    <button @click="increment()">+</button>
     <br />
 
-    <br />
-    remove from PRIVATE counter
-    <button @click='decrement()'>-</button>
+    <br />remove from PRIVATE counter
+    <button @click="decrement()">-</button>
   </div>
 </template>
 
@@ -18,11 +17,11 @@ export default {
   },
   methods: {
     increment() {
-      this.$emit('incrementPrivate');
+      this.$emit('incrementPrivate', 1);
     },
 
     decrement() {
-      this.$emit('decrementPrivate');
+      this.$emit('decrementPrivate', 1);
     },
   },
 };
